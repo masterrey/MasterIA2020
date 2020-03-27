@@ -11,11 +11,7 @@ public class GenerationAdmin : MonoBehaviour
     public float[] bestiaturnDNA;
     void Start()
     {
-        if (PlayerPrefs.HasKey("BestIA"))
-        {
-            bestiaturnDNA = PlayerPrefsX.GetFloatArray("BestIA");
-            print("tem save");
-        }
+        
 
            iaKarts = new IAInput[karts];
         for (int i = 0; i < karts; i++)
@@ -23,19 +19,38 @@ public class GenerationAdmin : MonoBehaviour
             GameObject kart=
             Instantiate(iaprefab, transform.position, transform.rotation);
             iaKarts[i] = kart.GetComponent<IAInput>();
-            if (bestiaturnDNA.Length>0)
+
+           
+        }
+
+        StartCoroutine(DNAStart());
+        
+    }
+    private IEnumerator DNAStart()
+    {
+        if (PlayerPrefs.HasKey("BestIA"))
+        {
+            bestiaturnDNA = PlayerPrefsX.GetFloatArray("BestIA");
+            print("tem save");
+        }
+        for (int i = 0; i < karts; i++)
+        {
+            if (bestiaturnDNA.Length > 0)
             {
-                print("colocando o melhor");
+                //print("colocando o melhor");
                 iaKarts[i].SetDNA(bestiaturnDNA);
             }
             else
             {
-                
+
                 iaKarts[i].CreateDNA();
             }
+            yield return new WaitForEndOfFrame();
         }
-        
+
+       
     }
+
 
     // Update is called once per frame
     void Update()

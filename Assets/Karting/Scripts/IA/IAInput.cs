@@ -31,26 +31,24 @@ public class IAInput : MonoBehaviour , IInput
         get { return m_HopHeld; }
     }
 
-    internal void SetDNA(float[] bestiaturnDNA)
-    {
-        iaturnDNA = bestiaturnDNA;
-    }
+   
 
     float m_Acceleration;
-    [SerializeField]
+   
     float m_Steering;
     bool m_HopPressed;
     bool m_HopHeld;
     bool m_BoostPressed;
     bool m_FirePressed;
-    [SerializeField]
-    float[] iaturnDNA;
+   
+    public float[] iaturnDNA;
     float timeindex;
     public int checkpoint;
+    Rigidbody rdb;
     void Start()
     {
-       
-       
+        // PlayerPrefs.DeleteAll();
+        rdb = gameObject.GetComponent<Rigidbody>();
     }
     internal float[] GetDNA()
     {
@@ -67,12 +65,36 @@ public class IAInput : MonoBehaviour , IInput
         }
     }
 
+    internal void SetDNA(float[] bestiaturnDNA)
+    {
+        /*
+        UnityEngine.Random.InitState(gameObject.GetInstanceID());
+
+        */
+       
+        for (int i = 0; i < iaturnDNA.Length; i++)
+        {
+            iaturnDNA[i] = UnityEngine.Random.Range(-1, 2);
+            if (UnityEngine.Random.Range(0, 100) < 90)
+            {
+
+                iaturnDNA[i] = bestiaturnDNA[i];
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
         m_Acceleration = 1;
      
         m_Steering = iaturnDNA[checkpoint];
+        if(checkpoint>2 && rdb.velocity.magnitude < 1)
+        {
+            rdb.isKinematic = true;
+        }
+            
+
     }
 
     private void OnTriggerEnter(Collider other)

@@ -113,8 +113,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbfb875875e7ef84eb9e95123b531985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Steering: 0
   iaturnDNA:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   - 0
   - 0
   - 0
