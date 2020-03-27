@@ -46,15 +46,20 @@ public class IAInput : MonoBehaviour , IInput
     [SerializeField]
     float[] iaturnDNA;
     float timeindex;
-    int checkpoint;
+    public int checkpoint;
     void Start()
     {
-        m_Acceleration = 1;
+       
+       
     }
-
+    internal float[] GetDNA()
+    {
+        return iaturnDNA;
+    }
     internal void CreateDNA()
     {
-        iaturnDNA = new float[37];
+        
+        print("setando DNA inicial"+ iaturnDNA.Length);
         for (int i = 0; i < iaturnDNA.Length; i++)
         {
             iaturnDNA[i] = UnityEngine.Random.Range(-1, 2);
@@ -65,7 +70,8 @@ public class IAInput : MonoBehaviour , IInput
     // Update is called once per frame
     void Update()
     {
-        //timeindex += Time.deltaTime*2;
+        m_Acceleration = 1;
+     
         m_Steering = iaturnDNA[checkpoint];
     }
 
@@ -73,6 +79,7 @@ public class IAInput : MonoBehaviour , IInput
     {
         if (other.CompareTag("CheckPointIA"))
         {
+
             checkpoint++;
         }
     }
