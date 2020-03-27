@@ -276,7 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iaprefab: {fileID: 3763822634849867148, guid: 28a6beccfb329854cb088f7fb44e4376,
     type: 3}
-  karts: 50
+  karts: 100
   iaKarts: []
   bestiaturnDNA: []
 --- !u!4 &58467060
@@ -11891,7 +11891,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1175779212}
-  m_LocalRotation: {x: 0.038215782, y: 0.000000037378957, z: -0.0000005006282, w: 0.99926955}
+  m_LocalRotation: {x: 0.038215775, y: 0.0000000024461528, z: -0.00000049929224, w: 0.99926955}
   m_LocalPosition: {x: 16.195253, y: 2.3200002, z: -5.985518}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -21231,7 +21231,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110853102}
-  m_LocalRotation: {x: 0.038215782, y: 0.000000037378957, z: -0.0000005006282, w: 0.99926955}
+  m_LocalRotation: {x: 0.038215775, y: 0.0000000024461528, z: -0.00000049929224, w: 0.99926955}
   m_LocalPosition: {x: 16.195253, y: 2.3200002, z: -5.985518}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

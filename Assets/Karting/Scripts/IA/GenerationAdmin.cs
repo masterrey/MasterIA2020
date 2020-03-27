@@ -78,6 +78,10 @@ public class GenerationAdmin : MonoBehaviour
             if (bestcheckpoint > 0)
             {
                 print("salvando melhor");
+                
+
+                var cubeRenderer = bestcart.gameObject.GetComponentInChildren<Renderer>();
+                cubeRenderer.material.SetColor("_Color", Color.red);
                 bestiaturnDNA = bestcart.GetDNA();
                 PlayerPrefsX.SetFloatArray("BestIA", bestiaturnDNA);
             }

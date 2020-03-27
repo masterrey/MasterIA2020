@@ -75,7 +75,7 @@ public class IAInput : MonoBehaviour , IInput
         for (int i = 0; i < iaturnDNA.Length; i++)
         {
             iaturnDNA[i] = UnityEngine.Random.Range(-1, 2);
-            if (UnityEngine.Random.Range(0, 100) < 90)
+            if (UnityEngine.Random.Range(0, 100) < 98)
             {
 
                 iaturnDNA[i] = bestiaturnDNA[i];
@@ -89,9 +89,9 @@ public class IAInput : MonoBehaviour , IInput
         m_Acceleration = 1;
      
         m_Steering = iaturnDNA[checkpoint];
-        if(checkpoint>2 && rdb.velocity.magnitude < 1)
+        if(checkpoint>2 && rdb.velocity.magnitude < 5)
         {
-            rdb.isKinematic = true;
+            GetComponent<KartMovement>().enabled = false;
         }
             
 
