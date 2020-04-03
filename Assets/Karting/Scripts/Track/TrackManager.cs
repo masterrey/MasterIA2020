@@ -106,7 +106,7 @@ namespace KartGame.Track
             }
         }
 
-        void Start ()
+        public void myStart ()
         {
             if(checkpoints.Count == 0)
                 return;
@@ -120,6 +120,8 @@ namespace KartGame.Track
                 racer.DisableControl ();
             }
         }
+
+
 
         /// <summary>
         /// Starts the timers and enables control of all racers.
